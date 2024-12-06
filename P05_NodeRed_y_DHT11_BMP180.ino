@@ -12,7 +12,7 @@
 #define CHANNEL_PARAMS "ambientales"
 
 const char* ssid = "RED-ViVi";
-const char* password = "Ladeantes";
+const char* password = "ladeantes";
 // const char* ssid = "Internet_UNL";
 // const char* password = "UNL1859WiFi";
 
@@ -55,12 +55,12 @@ void callback(char* topic, byte* payload, unsigned int length) {
     }
     Serial.println("Mensaje: " + message);
 
-    if (message == "on") {
+    if (message == "true") {
       // Encender el LED
-      digitalWrite(LED_BUILTIN, HIGH);
-    } else if (message == "off") {
+      digitalWrite(LED_PIN, HIGH);
+    } else {
       // Apagar el LED
-      digitalWrite(LED_BUILTIN, LOW);
+      digitalWrite(LED_PIN, LOW);
     }
   }
 }
